@@ -4,6 +4,7 @@ const QuoteWidget = () => {
   const [quote, setQuote] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   const fetchQuote = async () => {
     setLoading(true);
@@ -15,6 +16,7 @@ const QuoteWidget = () => {
       }
       const data = await response.json();
       setQuote(data);
+      setLastUpdated(new Date().toLocaleTimeString());
     } catch (err) {
       setError('Failed to fetch quote. ' + err.message);
     } finally {
@@ -40,6 +42,11 @@ const QuoteWidget = () => {
         <blockquote>
           <p style={{ fontStyle: 'italic', fontSize: '1.1rem' }}>"{quote.quote}"</p>
           <footer className="muted" style={{ marginTop: '10px' }}>— {quote.author}</footer>
+          {lastUpdated && (
+            <div style={{ fontSize: '0.8rem', color: 'var(--muted)', marginTop: '8px', opacity: 0.8 }}>
+              Last updated: {lastUpdated}
+            </div>
+          )}
         </blockquote>
       )}
 
