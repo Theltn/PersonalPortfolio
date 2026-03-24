@@ -40,3 +40,5 @@ The **`QuoteWidget`** is a reusable component integrated into the `/experience` 
 ## Stretch Goals / Enhancements
 - **Custom Thematic Integration:** Extended and adapted the layout from the previous HTML assignment dynamically into React components to ensure optimal separation of concerns while keeping the aesthetic identical.
 - **Extracted Reusable Building Blocks:** Created highly scalable `PageHeader`, `SkillList`, and `ExperienceItem` components with optional prop rendering.
+- **Dark/Light Theme Toggle:** Implemented a theme toggle button in the Navbar that switches between dark and light modes, persisting the user's preference in `localStorage`.
+- **Quote Timestamp:** Added a "Last updated" timestamp to the `QuoteWidget` that displays exactly when the quote was fetched.
